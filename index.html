@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOYA'S POV — Fotografía de Autor & Portafolio</title>
+  <meta name="description" content="Portafolio fotográfico de Moya's POV. Cada fotografía es un fragmento de la memoria. Sesiones editoriales, retrato y narrativa visual." />
+
+  <!-- Google Fonts: Google Sans (Light 300, Regular 400, Bold 700) + Respaldo geométrico idéntico -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-scroll-state="minimal">
+
+  <!-- Barra superior de progreso de lectura sutil -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- Efecto ambiental moderno (se activa suavemente al hacer scroll) -->
+  <div class="ambient-glow-layer" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+
+  <!-- =====================================================================
+       HEADER NAVEGACIÓN
+       Botones: Inicio | Sobre mí | Portafolio | Paquetes | Reservar (resumido)
+       ===================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#inicio" class="brand-logo" aria-label="Ir al inicio">
+        <span class="brand-name" id="headerBrandName">MOYA'S POV</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a>
+        <a href="#sobre-mi" class="nav-link" data-section="sobre-mi">Sobre mí</a>
+        <a href="#portafolio" class="nav-link" data-section="portafolio">Portafolio</a>
+        <a href="#paquetes" class="nav-link" data-section="paquetes">Paquetes</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- "Reserva tu sesión" resumido a "Reservar" -->
+        <a href="#reservar" class="btn-header-cta" data-section="reservar">
+          <span>Reservar</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Botón menú móvil -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú desplegable móvil -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="#inicio" class="mobile-nav-link">Inicio</a>
+        <a href="#sobre-mi" class="mobile-nav-link">Sobre mí</a>
+        <a href="#portafolio" class="mobile-nav-link">Portafolio</a>
+        <a href="#paquetes" class="mobile-nav-link">Paquetes</a>
+        <a href="#reservar" class="mobile-nav-link mobile-nav-cta">Reservar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================================================================
+         00. INICIO (HERO MINIMALISTA + FOTOS SELECCIONADAS ANIMADAS DETRÁS)
+         Quote de Robert Frank: "Cada fotografía es un fragmento de la memoria"
+         =================================================================== -->
+    <section id="inicio" class="hero-section">
+      <!-- Escenario animado detrás del quote con fotografías seleccionadas -->
+      <div class="hero-backdrop-stage" id="heroBackdropStage" aria-hidden="true">
+        <!-- Capa 1: Crossfade atmosférico de fondo con Ken Burns suave -->
+        <div class="hero-bg-crossfade" id="heroBgCrossfade"></div>
+
+        <!-- Capa 2: Cinta editorial de fotografías seleccionadas pasando suavemente detrás -->
+        <div class="hero-drifting-gallery" id="heroDriftingGallery">
+          <div class="drifting-track track-primary" id="driftingTrackPrimary"></div>
+          <div class="drifting-track track-secondary" id="driftingTrackSecondary"></div>
+        </div>
+
+        <!-- Viñeta minimalista para garantizar contraste limpio del quote -->
+        <div class="hero-vignette-overlay"></div>
+      </div>
+
+      <!-- Contenido central minimalista -->
+      <div class="hero-content container">
+        <div class="hero-minimal-frame">
+          <p class="hero-eyebrow" id="heroEyebrow">PORTAFOLIO SELECCIONADO · MOYA'S POV</p>
+
+          <blockquote class="hero-quote-block">
+            <h1 class="hero-quote-text" id="heroQuoteText">
+              “Cada fotografía es un fragmento de la memoria”
+            </h1>
+            <footer class="hero-quote-author">
+              <span class="quote-line" aria-hidden="true"></span>
+              <cite id="heroQuoteAuthor">Robert Frank</cite>
+            </footer>
+          </blockquote>
+
+          <p class="hero-subtitle" id="heroSubtitle">
+            Capturando la estética del instante con una mirada íntima, atemporal y honesta.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#portafolio" class="btn-primary" id="heroCtaPrimary">
+              <span>Explorar Portafolio</span>
+            </a>
+            <a href="#reservar" class="btn-ghost" id="heroCtaSecondary">
+              <span>Reservar Sesión</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra inferior minimalista: Indicador de fotos en movimiento + Scroll -->
+      <div class="hero-bottom-bar container">
+        <div class="hero-photo-indicators" id="heroPhotoIndicators" aria-label="Fotografías seleccionadas en portada">
+          <!-- Generado dinámicamente por JS -->
+        </div>
+
+        <div class="hero-active-meta" id="heroActiveMeta">
+          <span class="meta-dot"></span>
+          <span class="meta-title" id="heroCurrentPhotoTitle">Luz de Medianoche</span>
+          <span class="meta-divider">·</span>
+          <span class="meta-exif" id="heroCurrentPhotoExif">50mm · f/1.4</span>
+        </div>
+
+        <a href="#sobre-mi" class="scroll-down-indicator" aria-label="Deslizar hacia abajo">
+          <span class="scroll-text">Scroll</span>
+          <span class="scroll-line"><span class="scroll-line-fill"></span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         01. SOBRE MÍ (Transición hacia estética moderna y editorial)
+         =================================================================== -->
+    <section id="sobre-mi" class="about-section section-padding">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Columna Retrato del Fotógrafo -->
+          <div class="about-visual reveal-on-scroll">
+            <div class="portrait-frame">
+              <div class="portrait-accent-backdrop" aria-hidden="true"></div>
+              <img
+                src=""
+                alt="Retrato de Moya - Fotógrafo"
+                id="aboutPortraitImg"
+                class="portrait-img"
+                loading="lazy"
+              />
+              <div class="portrait-floating-badge">
+                <span class="badge-dot"></span>
+                <span id="aboutPortraitCaption">Moya — Dirección creativa & Fotografía</span>
+              </div>
+            </div>
+
+            <!-- Estadísticas rápidas -->
+            <div class="about-stats-row" id="aboutStatsRow">
+              <!-- Generado dinámicamente -->
+            </div>
+          </div>
+
+          <!-- Columna Narrativa y Filosofía -->
+          <div class="about-copy reveal-on-scroll">
+            <span class="section-eyebrow" id="aboutEyebrow">01 / SOBRE MÍ</span>
+            <h2 class="section-title" id="aboutTitle">
+              Detrás del lente: una búsqueda constante de lo auténtico.
+            </h2>
+
+            <p class="about-lead" id="aboutLead"></p>
+            <p class="about-paragraph" id="aboutParagraph1"></p>
+            <p class="about-paragraph" id="aboutParagraph2"></p>
+
+            <!-- Pilares del enfoque fotográfico -->
+            <div class="about-pillars" id="aboutPillars">
+              <!-- Generado dinámicamente -->
+            </div>
+
+            <div class="about-signature-bar">
+              <a href="#portafolio" class="link-editorial">
+                <span>Ver el trabajo seleccionado</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         02. PORTAFOLIO (Galería moderna asimétrica con filtros y Lightbox)
+         =================================================================== -->
+    <section id="portafolio" class="portfolio-section section-padding">
+      <div class="container">
+        <div class="section-header-split reveal-on-scroll">
+          <div>
+            <span class="section-eyebrow" id="portfolioEyebrow">02 / PORTAFOLIO</span>
+            <h2 class="section-title" id="portfolioTitle">Archivo Visual Seleccionado</h2>
+            <p class="section-subtitle" id="portfolioSubtitle">
+              Una curaduría de retratos, editoriales e historias capturadas bajo mi punto de vista.
+            </p>
+          </div>
+
+          <!-- Filtros de categoría -->
+          <div class="portfolio-filters" id="portfolioFilters" role="tablist" aria-label="Filtrar portafolio por categoría">
+            <!-- Generado dinámicamente -->
+          </div>
+        </div>
+
+        <!-- Grid Bento / Editorial de Fotografías -->
+        <div class="portfolio-grid" id="portfolioGrid">
+          <!-- Generado dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         03. PAQUETES (Tarjetas modernas con acento #D85082 no invasivo)
+         =================================================================== -->
+    <section id="paquetes" class="packages-section section-padding">
+      <div class="container">
+        <div class="section-header-center reveal-on-scroll">
+          <span class="section-eyebrow" id="packagesEyebrow">03 / PAQUETES</span>
+          <h2 class="section-title" id="packagesTitle">Inversión & Experiencias</h2>
+          <p class="section-subtitle" id="packagesSubtitle">
+            Sesiones diseñadas con claridad y cuidado en cada etapa. Elige la experiencia que mejor se adapte a tu proyecto.
+          </p>
+        </div>
+
+        <div class="packages-grid" id="packagesGrid">
+          <!-- Generado dinámicamente -->
+        </div>
+
+        <div class="packages-custom-note reveal-on-scroll">
+          <div class="custom-note-inner">
+            <span class="note-icon" aria-hidden="true">✦</span>
+            <p id="packagesNote">¿Necesitas una producción comercial o cobertura a medida? Podemos armar un paquete personalizado.</p>
+            <a href="#reservar" class="btn-outline-sm" data-select-package="Personalizado">Cotizar a medida</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         04. RESERVA TU SESIÓN (Formulario interactivo moderno)
+         =================================================================== -->
+    <section id="reservar" class="booking-section section-padding">
+      <div class="container">
+        <div class="booking-wrapper reveal-on-scroll">
+          <!-- Columna de información de contacto y proceso -->
+          <div class="booking-info">
+            <span class="section-eyebrow" id="bookingEyebrow">04 / RESERVA TU SESIÓN</span>
+            <h2 class="section-title" id="bookingTitle">Creemos tu próximo fragmento de memoria.</h2>
+            <p class="booking-desc" id="bookingSubtitle">
+              Completa los detalles básicos de la sesión que tienes en mente y te responderé en menos de 24 horas para confirmar disponibilidad y crear tu moodboard.
+            </p>
+
+            <div class="booking-steps">
+              <div class="step-item">
+                <span class="step-num">01</span>
+                <div>
+                  <h4>Elige tu experiencia</h4>
+                  <p>Selecciona el paquete o cuéntame tu idea personalizada.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <span class="step-num">02</span>
+                <div>
+                  <h4>Moodboard & Dirección</h4>
+                  <p>Definimos locación, estética, iluminación y vestuario juntos.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <span class="step-num">03</span>
+                <div>
+                  <h4>Día de Sesión & Entrega</h4>
+                  <p>Una experiencia fluida con entrega en galería privada de alta resolución.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-direct-cards">
+              <div class="contact-pill">
+                <span class="contact-label">Instagram</span>
+                <span class="contact-val" id="contactInstagram">@moyaspov</span>
+              </div>
+              <div class="contact-pill">
+                <span class="contact-label">Correo directo</span>
+                <span class="contact-val" id="contactEmail">hola@moyaspov.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Formulario de Reserva -->
+          <div class="booking-form-card">
+            <form id="bookingForm" class="booking-form" novalidate>
+              <div class="form-row-two">
+                <div class="form-group">
+                  <label for="clientName">Tu nombre *</label>
+                  <input type="text" id="clientName" name="clientName" required placeholder="Ej. Valeria Morales" />
+                </div>
+                <div class="form-group">
+                  <label for="clientContact">WhatsApp o Instagram *</label>
+                  <input type="text" id="clientContact" name="clientContact" required placeholder="Ej. @valeria o +52..." />
+                </div>
+              </div>
+
+              <div class="form-row-two">
+                <div class="form-group">
+                  <label for="sessionPackage">Paquete de interés *</label>
+                  <select id="sessionPackage" name="sessionPackage" required>
+                    <!-- Opciones pobladas dinámicamente desde Paquetes -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="sessionDate">Fecha tentativa</label>
+                  <input type="date" id="sessionDate" name="sessionDate" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Tipo de atmósfera / locación preferida</label>
+                <div class="atmosphere-pills" role="radiogroup" aria-label="Preferencia de locación">
+                  <label class="pill-radio">
+                    <input type="radio" name="sessionLocation" value="Estudio Minimalista" checked />
+                    <span>Estudio Minimalista</span>
+                  </label>
+                  <label class="pill-radio">
+                    <input type="radio" name="sessionLocation" value="Exterior / Urbano" />
+                    <span>Exterior / Urbano</span>
+                  </label>
+                  <label class="pill-radio">
+                    <input type="radio" name="sessionLocation" value="Luz Natural / Atardecer" />
+                    <span>Luz Natural</span>
+                  </label>
+                  <label class="pill-radio">
+                    <input type="radio" name="sessionLocation" value="Por definir con Moya" />
+                    <span>Por definir</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sessionNotes">Cuéntame sobre tu idea o vibra para la sesión</label>
+                <textarea id="sessionNotes" name="sessionNotes" rows="3" placeholder="¿Qué quieres transmitir? ¿Tienes referencias o algún propósito especial?"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit-booking">
+                <span>Solicitar Reserva</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+
+              <p class="form-footnote">
+                Sin compromiso inmediato. Confirmaremos fecha y detalles personalmente.
+              </p>
+
+              <!-- Mensaje de confirmación al enviar -->
+              <div class="booking-success-msg" id="bookingSuccessMsg" hidden>
+                <div class="success-header">
+                  <span class="success-badge">✓ Solicitud registrada</span>
+                  <button type="button" class="close-success" id="closeSuccessBtn" aria-label="Cerrar aviso">×</button>
+                </div>
+                <p id="bookingSuccessText">¡Gracias! Tu solicitud ha sido preparada.</p>
+                <div class="success-actions">
+                  <a href="#" id="whatsappDirectLink" target="_blank" rel="noopener" class="btn-whatsapp-send">
+                    Enviar ahora por WhatsApp →
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       FOOTER & ACCESO AL PANEL DE ADMIN
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name" id="footerBrandName">MOYA'S POV</span>
+        <span class="brand-dot"></span>
+        <p class="footer-tagline" id="footerTagline">Fotografía de Autor & Dirección Visual</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#reservar">Reservar</a>
+      </div>
+
+      <div class="footer-meta">
+        <span>© <span id="currentYear">2026</span> Moya's POV. Todos los derechos reservados.</span>
+        <button type="button" class="btn-admin-trigger" id="openAdminBtn" title="Abrir Panel de Administración (Atajo: Shift + A)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span>Panel Admin</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       VISOR LIGHTBOX DE PORTAFOLIO (Pantalla completa)
+       ===================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Visor de fotografía" hidden>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar visor">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Fotografía anterior">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Fotografía siguiente">›</button>
+
+    <div class="lightbox-content">
+      <div class="lightbox-img-container">
+        <img src="" alt="" id="lightboxImg" />
+      </div>
+      <div class="lightbox-caption-bar">
+        <div>
+          <span class="lightbox-cat" id="lightboxCat">Editorial</span>
+          <h3 class="lightbox-title" id="lightboxTitle">Título de la obra</h3>
+          <span class="lightbox-meta" id="lightboxMeta">50mm · f/1.4</span>
+        </div>
+        <a href="#reservar" class="btn-outline-sm" id="lightboxBookBtn">Reservar este estilo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       PANEL DE ADMINISTRACIÓN INTERACTIVO (CMS LOCAL / PREVIEW FUTURO)
+       Permite editar fotos del inicio, quote, sobre mí, portafolio y paquetes
+       ===================================================================== -->
+  <aside class="admin-drawer" id="adminDrawer" aria-label="Panel de Administración de Moya's POV" hidden>
+    <div class="admin-backdrop" id="adminBackdrop"></div>
+    <div class="admin-panel">
+      <header class="admin-header">
+        <div>
+          <span class="admin-badge">CMS STUDIO</span>
+          <h3>Panel de Administración</h3>
+          <p>Edita fotografías, textos y paquetes en tiempo real.</p>
+        </div>
+        <button type="button" class="admin-close-btn" id="closeAdminBtn" aria-label="Cerrar panel">×</button>
+      </header>
+
+      <!-- Pestañas del Admin -->
+      <div class="admin-tabs" role="tablist">
+        <button type="button" class="admin-tab active" data-admin-tab="tab-hero">Inicio & Fotos</button>
+        <button type="button" class="admin-tab" data-admin-tab="tab-portfolio">Portafolio</button>
+        <button type="button" class="admin-tab" data-admin-tab="tab-about">Sobre mí</button>
+        <button type="button" class="admin-tab" data-admin-tab="tab-packages">Paquetes</button>
+        <button type="button" class="admin-tab" data-admin-tab="tab-bookings">Reservas</button>
+      </div>
+
+      <div class="admin-body">
+        <!-- TAB 1: INICIO & FOTOS ANIMADAS -->
+        <div class="admin-tab-content active" id="tab-hero">
+          <div class="admin-section-block">
+            <h4>Frase Principal (Inicio)</h4>
+            <div class="admin-field">
+              <label>Frase / Quote</label>
+              <input type="text" id="adminHeroQuote" />
+            </div>
+            <div class="admin-field-row">
+              <div class="admin-field">
+                <label>Autor del Quote</label>
+                <input type="text" id="adminHeroAuthor" />
+              </div>
+              <div class="admin-field">
+                <label>Estilo de animación de fondo</label>
+                <select id="adminHeroAnimStyle">
+                  <option value="cinematic-drift">Flujo Editorial + Crossfade (Recomendado)</option>
+                  <option value="crossfade">Solo Crossfade Cinemático</option>
+                </select>
+              </div>
+            </div>
+            <div class="admin-field">
+              <label>Subtítulo de bienvenida</label>
+              <input type="text" id="adminHeroSubtitle" />
+            </div>
+          </div>
+
+          <div class="admin-section-block">
+            <div class="admin-block-header">
+              <div>
+                <h4>Fotos Seleccionadas en Movimiento (Hero)</h4>
+                <p class="admin-help">Estas fotografías pasan animadas detrás del quote en el inicio.</p>
+              </div>
+            </div>
+
+            <!-- Agregar nueva foto al Hero -->
+            <div class="admin-add-box">
+              <h5>+ Agregar fotografía al Inicio</h5>
+              <div class="admin-field-row">
+                <input type="text" id="newHeroPhotoTitle" placeholder="Título (ej. Luz de Estudio)" />
+                <input type="text" id="newHeroPhotoMeta" placeholder="EXIF (ej. 50mm · f/1.4)" />
+              </div>
+              <div class="admin-field">
+                <input type="url" id="newHeroPhotoUrl" placeholder="Pega URL de imagen o sube un archivo abajo..." />
+              </div>
+              <div class="admin-upload-row">
+                <label class="btn-file-upload">
+                  <input type="file" id="newHeroPhotoFile" accept="image/*" hidden />
+                  <span>📁 Subir desde mi equipo</span>
+                </label>
+                <button type="button" class="btn-admin-primary" id="addHeroPhotoBtn">Agregar al Inicio</button>
+              </div>
+            </div>
+
+            <div class="admin-photo-list" id="adminHeroPhotoList">
+              <!-- Lista de fotos actuales en el Hero -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: PORTAFOLIO -->
+        <div class="admin-tab-content" id="tab-portfolio">
+          <div class="admin-section-block">
+            <h4>Agregar Fotografía al Portafolio</h4>
+            <div class="admin-add-box">
+              <div class="admin-field-row">
+                <input type="text" id="newPortTitle" placeholder="Título de la foto" />
+                <select id="newPortCategory">
+                  <option value="Retrato">Retrato</option>
+                  <option value="Editorial">Editorial</option>
+                  <option value="Parejas">Parejas</option>
+                  <option value="Urbano">Urbano</option>
+                </select>
+              </div>
+              <div class="admin-field-row">
+                <input type="text" id="newPortMeta" placeholder="Datos (ej. 35mm · f/1.8)" />
+                <select id="newPortSize">
+                  <option value="normal">Formato Estándar</option>
+                  <option value="tall">Vertical Destacado (Tall)</option>
+                  <option value="wide">Horizontal Panorámico (Wide)</option>
+                </select>
+              </div>
+              <div class="admin-field">
+                <input type="url" id="newPortUrl" placeholder="URL de la fotografía o sube desde tu equipo..." />
+              </div>
+              <div class="admin-upload-row">
+                <label class="btn-file-upload">
+                  <input type="file" id="newPortFile" accept="image/*" hidden />
+                  <span>📁 Subir foto local</span>
+                </label>
+                <button type="button" class="btn-admin-primary" id="addPortfolioPhotoBtn">Publicar en Portafolio</button>
+              </div>
+            </div>
+
+            <h4>Fotografías Publicadas (<span id="adminPortCount">0</span>)</h4>
+            <div class="admin-photo-list" id="adminPortfolioList">
+              <!-- Lista generada dinámicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: SOBRE MÍ -->
+        <div class="admin-tab-content" id="tab-about">
+          <div class="admin-section-block">
+            <h4>Información "Sobre Mí"</h4>
+            <div class="admin-field">
+              <label>Título de la sección</label>
+              <input type="text" id="adminAboutTitle" />
+            </div>
+            <div class="admin-field">
+              <label>Introducción destacada</label>
+              <textarea id="adminAboutLead" rows="2"></textarea>
+            </div>
+            <div class="admin-field">
+              <label>Párrafo 1 (Filosofía)</label>
+              <textarea id="adminAboutP1" rows="3"></textarea>
+            </div>
+            <div class="admin-field">
+              <label>Párrafo 2 (Enfoque y estilo)</label>
+              <textarea id="adminAboutP2" rows="3"></textarea>
+            </div>
+            <div class="admin-field">
+              <label>Fotografía de Retrato (URL o subir archivo)</label>
+              <input type="url" id="adminAboutPortraitUrl" />
+              <div class="admin-upload-row" style="margin-top: 8px;">
+                <label class="btn-file-upload">
+                  <input type="file" id="adminAboutPortraitFile" accept="image/*" hidden />
+                  <span>📁 Cambiar foto de perfil desde equipo</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-section-block">
+            <h4>Datos de Contacto</h4>
+            <div class="admin-field-row">
+              <div class="admin-field">
+                <label>Instagram</label>
+                <input type="text" id="adminBrandIg" />
+              </div>
+              <div class="admin-field">
+                <label>WhatsApp (con código de país)</label>
+                <input type="text" id="adminBrandWa" />
+              </div>
+            </div>
+            <div class="admin-field">
+              <label>Correo electrónico</label>
+              <input type="email" id="adminBrandEmail" />
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: PAQUETES -->
+        <div class="admin-tab-content" id="tab-packages">
+          <div class="admin-section-block">
+            <h4>Editar Paquetes de Sesión</h4>
+            <p class="admin-help">Modifica nombres, precios y lo que incluye cada paquete (una característica por línea).</p>
+            <div id="adminPackagesEditor">
+              <!-- Generado dinámicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: RESERVAS RECIBIDAS -->
+        <div class="admin-tab-content" id="tab-bookings">
+          <div class="admin-section-block">
+            <h4>Solicitudes de Reserva Guardadas</h4>
+            <p class="admin-help">Aquí aparecen las reservas de prueba enviadas desde el formulario.</p>
+            <div id="adminBookingsList" class="admin-bookings-list">
+              <!-- Generado dinámicamente -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="admin-footer">
+        <button type="button" class="btn-admin-reset" id="resetCmsBtn">Restaurar Original</button>
+        <div class="admin-footer-right">
+          <button type="button" class="btn-admin-export" id="exportCmsBtn" title="Descargar respaldo JSON">Exportar JSON</button>
+          <button type="button" class="btn-admin-save" id="saveCmsBtn">Guardar Cambios</button>
+        </div>
+      </footer>
+    </div>
+  </aside>
+
+  <!-- Notificación Toast flotante -->
+  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite" hidden>
+    <span class="toast-dot"></span>
+    <span id="toastMessage">Cambios aplicados correctamente</span>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
